@@ -373,7 +373,7 @@ async function sendRsvp(){
     });
     $("rStep3").hidden=true;$("rsvpThanks").hidden=false;
     $("rThanksTitle").textContent=going.length?"Que alegria!":"Obrigado por avisar.";
-    $("rThanksText").textContent=going.length?"Presença confirmada para "+going.map(g=>g.n).join(", ")+". Nos vemos no dia 24 de janeiro!":"Vamos sentir a falta de vocês. Obrigado pelo carinho!";
+    $("rThanksText").textContent=going.length?"Presença confirmada. Nos vemos no dia 24 de janeiro!":"Vamos sentir a falta de vocês. Obrigado pelo carinho!";
   }catch(e){st.textContent="Não conseguimos enviar agora. Verifique a internet e tente de novo."}
   $("rBtn").disabled=false;
 }
@@ -393,6 +393,7 @@ const items=[
 ["Torradeira",150,"Cozinha e boas refeições","▥","Para começar o dia com boas torradas."],
 ["Faca de Chef",250,"Cozinha e boas refeições","⚔","Uma ferramenta digna de um mestre-cuca."],
 ["Kit Vinho",180,"Cozinha e boas refeições","♜","Para brindar às novas histórias."],
+["Assadeira de Cerâmica",200,"Cozinha e boas refeições","♨","Para preparar receitas dignas de um banquete."],
 ["Multiprocessador",500,"Cozinha e boas refeições","⚙","Um aliado para preparar receitas e economizar tempo."],
 ["Aspirador de pó",500,"Conforto do reino","✧","Para manter o reino livre de poeira e migalhas."],
 ["Travesseiros",180,"Conforto do reino","☁","Para noites de descanso depois das aventuras."],
@@ -401,13 +402,18 @@ const items=[
 ["Colcha",220,"Conforto do reino","❧","Um toque de conforto para o novo quarto."],
 ["Ferro de Passar",180,"Conforto do reino","⌁","Para manter as vestimentas em ordem."],
 ["Secador de Cabelos",250,"Conforto do reino","❦","Um aliado para a rotina de cuidados."],
-["Abajur de Chão",300,"Conforto do reino","☼","Para iluminar leituras e noites tranquilas."],
 ["Contribuição para as passagens",800,"Lua de mel","✈","O primeiro passo para começar nossa próxima aventura."],
 ["Hospedagem da viagem",1000,"Lua de mel","⌂","Nossa base para descansar entre os passeios."],
 ["Jantar especial a dois",350,"Lua de mel","♜","Uma noite para brindar ao início dessa nova jornada."],
 ["Passeio pelo destino",300,"Lua de mel","☼","Para explorar lugares novos e criar boas memórias."],
 ["Transporte durante a viagem",500,"Lua de mel","➜","Para chegar a cada novo ponto dessa aventura."],
-["Experiência inesquecível",400,"Lua de mel","✧","Uma atividade especial para tornar a viagem ainda mais memorável."]
+["Experiência inesquecível",400,"Lua de mel","✧","Uma atividade especial para tornar a viagem ainda mais memorável."],
+["Abajur de Chão",300,"Móveis e decoração","☼","Para iluminar leituras e noites tranquilas."],
+["Criados-Mudos",300,"Móveis e decoração","⌂","Para manter por perto tudo o que acompanha nossas noites."],
+["Quadros",200,"Móveis e decoração","▧","Para dar às paredes um pouco da nossa história."],
+["Mesa de jantar",2000,"Móveis e decoração","▤","O ponto de encontro para refeições, conversas e boas histórias."],
+["Poltrona",400,"Móveis e decoração","♧","Um cantinho confortável para ler e descansar."],
+["Estante de livros",500,"Móveis e decoração","▤","Para abrigar nossas próximas aventuras literárias."]
 ];
 let selected=null,lastValue=0,registered=false;
 function render(){
