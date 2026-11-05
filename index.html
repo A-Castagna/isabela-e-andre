@@ -33,7 +33,7 @@ h2.title{text-align:center;text-transform:uppercase;font-weight:400;letter-spaci
 .lead{text-align:center;color:var(--muted);font-style:italic;margin:0 0 30px}
 .welcome{max-width:720px;margin:0 auto;text-align:center;font-size:18px;color:#4f5144}
 .welcome p{margin:0 0 18px}
-blockquote{max-width:620px;margin:38px auto 0;padding:26px 24px;text-align:center;border-top:1px solid var(--line);border-bottom:1px solid var(--line);font-style:italic;font-size:20px;color:var(--ink)}
+blockquote{max-width:620px;margin:38px auto 0;padding:26px 24px;text-align:center;border-top:1px solid var(--line);border-bottom:1px solid var(--line);font-style:italic;font-size:19px;color:var(--ink)}
 blockquote cite{display:block;margin-top:12px;font-size:13px;font-style:normal;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
 .alt{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 /* gallery */
@@ -213,12 +213,69 @@ footer{text-align:center;padding:34px 18px;color:var(--muted);font-style:italic;
 </div>
 <p class="hint">Você pode contribuir com o valor total do presente ou com qualquer quantia.</p>
 </div>
-<div id="thanksArea" class="thanks" hidden><div class="orn">✦ ❧ ✦</div><h3>Muito obrigado!</h3><p class="desc">Recebemos seu aviso. Assim que conferirmos o Pix, o valor aparece na barra do presente.</p><button class="btn" onclick="closeModal()">Voltar à lista</button></div>
+<div id="thanksArea" class="thanks" hidden><div class="orn">✦ ❧ ✦</div><h3>Muito obrigado!</h3><p class="desc">Recebemos seu aviso. Vamos conferir o Pix e atualizaremos o valor assim que possível.</p><button class="btn" onclick="closeModal()">Voltar à lista</button></div>
 </div></div></div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <script>
-const INVITES=[{"c": "TESTE (pode apagar)", "q": 3, "p": ["Fulano Teste", "Ciclana Teste"]}];
+const INVITES=[{"c": "Laranjal", "q": 4, "p": ["Maria", "José Carlos", "Mário", "Luiz Fernando"]},
+  {"c": "Cristiane Martins", "q": 1, "p": ["Cristiane Martins"]},
+  {"c": "Tio Di", "q": 1, "p": ["Carlos Adriano"]},
+  {"c": "Tia Sil e Beto", "q": 2, "p": ["Silvana", "Humberto"]},
+  {"c": "Estevan e Tuca", "q": 2, "p": ["Estevan", "Tuca"]},
+  {"c": "Família Mutton Martins", "q": 3, "p": ["Renata", "Luciano", "Luke"]},
+  {"c": "Família Estevam Oliveira", "q": 3, "p": ["Talita", "Danilo", "Daniel"]},
+  {"c": "Família Pereira Fontes", "q": 4, "p": ["Barbara", "David", "Maria Fernanda", "João"]},
+  {"c": "Marisa e Rogério", "q": 2, "p": ["Marisa", "Rogério"]},
+  {"c": "Família Ariane", "q": 4, "p": ["Ariane", "Daniel", "Dalma", "Guilherme"]},
+  {"c": "Pati e Vini", "q": 2, "p": ["Patrícia", "Vinícius"]},
+  {"c": "Cláudia e Maurício", "q": 2, "p": ["Cláudia", "Maurício"]},
+  {"c": "Veronica, Pedro e Arthur", "q": 3, "p": ["Pedro", "Arthur", "Veronica"]},
+  {"c": "Cláudio e Genoefa", "q": 2, "p": ["Cláudio", "Genoefa"]},
+  {"c": "Casa da Vó", "q": 3, "p": ["Marcelo", "Ana Clara", "Gabriela"]},
+  {"c": "Mariana, Diego e Maria", "q": 3, "p": ["Mariana", "Diego", "Maria"]},
+  {"c": "Isabela e Rodrigo", "q": 2, "p": ["Isabela", "Rodrigo"]},
+  {"c": "Paulo e Camila", "q": 2, "p": ["Paulo", "Camila"]},
+  {"c": "Elisa e Cláudio", "q": 2, "p": ["Elisa", "Cláudio"]},
+  {"c": "Gi e Leo", "q": 2, "p": ["Giovana", "Leonardo"]},
+  {"c": "Cris e Leandro", "q": 2, "p": ["Cristiane", "Leandro"]},
+  {"c": "Tio Marco e Esposa", "q": 2, "p": ["Marco Antonio"]},
+  {"c": "Tio Neno", "q": 1, "p": ["Neno"]},
+  {"c": "Tio William e Esposa", "q": 2, "p": ["William"]},
+  {"c": "Diana e Emerson", "q": 2, "p": ["Diana", "Emerson"]},
+  {"c": "Aninha", "q": 1, "p": ["Ana Lívia"]},
+  {"c": "Helo", "q": 1, "p": ["Heloisa"]},
+  {"c": "Lucas e Ashley", "q": 2, "p": ["Lucas", "Ashley"]},
+  {"c": "Veva e Mazzilli", "q": 2, "p": ["Verena", "Murilo"]},
+  {"c": "Vitinho e Renata", "q": 2, "p": ["Victor", "Renata"]},
+  {"c": "Mat e Su", "q": 2, "p": ["Matheus", "Suellen"]},
+  {"c": "Gabi e Lúcio", "q": 2, "p": ["Gabriela", "Lúcio"]},
+  {"c": "Tenan e Gi", "q": 2, "p": ["Pedro", "Giovanna"]},
+  {"c": "Pastori e Andressa", "q": 2, "p": ["Pedro", "Andressa"]},
+  {"c": "Ge e Coelho", "q": 2, "p": ["Elvira", "Matheus"]},
+  {"c": "Pietro e Luana", "q": 2, "p": ["Pietro", "Luana"]},
+  {"c": "Yuri", "q": 1, "p": ["Yuri"]},
+  {"c": "Will", "q": 1, "p": ["William"]},
+  {"c": "Samuel", "q": 1, "p": ["Samuel"]},
+  {"c": "Raul", "q": 1, "p": ["Raul"]},
+  {"c": "Portela", "q": 1, "p": ["Portela"]},
+  {"c": "Pinto", "q": 1, "p": ["Matheus"]},
+  {"c": "Farofeiro", "q": 1, "p": ["Pedro Paulo"]},
+  {"c": "Meliro", "q": 1, "p": ["Murilo"]},
+  {"c": "Mollo", "q": 1, "p": ["Felipe Mollo"]},
+  {"c": "Cateter", "q": 1, "p": ["Matheus Marques"]},
+  {"c": "Cracco", "q": 1, "p": ["Luís Cracco"]},
+  {"c": "Barreto", "q": 1, "p": ["Henrique Barreto"]},
+  {"c": "Cauan", "q": 1, "p": ["Cauan Hara"]},
+  {"c": "Corradi", "q": 1, "p": ["André Corradi"]},
+  {"c": "Eduardo", "q": 1, "p": ["Eduardo"]},
+  {"c": "Favini", "q": 1, "p": ["Felipe Favini"]},
+  {"c": "Freitas", "q": 1, "p": ["Gustavo"]},
+  {"c": "Giuliano", "q": 1, "p": ["Giuliano"]},
+  {"c": "Ivan", "q": 1, "p": ["Ivan"]},
+  {"c": "Joca", "q": 1, "p": ["João Victor"]},
+  {"c": "Loik", "q": 1, "p": ["Loik"]}
+];
 // ===================== CONFIGURAÇÃO =====================
 const CONFIG={
   PIX_KEY:"bb343e39-0034-4b14-aaaf-f7a79d993840",
@@ -231,7 +288,7 @@ const CONFIG={
   // Confirmação de presença (Google Forms)
   RSVP_ACTION:"https://docs.google.com/forms/d/e/1FAIpQLSeqiRkYXIT26i5qj3wrR9ZDDX1k7uH_Sg3vX5WMOqr7zZtMYQ/formResponse",
   R_NOME:"entry.425735659",R_PRESENCA:"entry.487234265",R_ADULTOS:"entry.1753703259",R_CRIANCAS:"entry.634156104",R_TELEFONE:"entry.4477310",R_RESTRICAO:"entry.996572756",R_RECADO:"entry.214238064",R_CONFIRMADOS:"entry.1308636063",
-  WEDDING:"2027-01-24T11:00:00-03:00"
+  WEDDING:"2027-01-24T11:00:00-05:00"
 };
 // ========================================================
 const $=id=>document.getElementById(id);
@@ -323,7 +380,7 @@ $("rSearch").addEventListener("keydown",e=>{if(e.key==="Enter")searchInvites()})
 
 // ---------- Lista de presentes ----------
 const items=[
-["Geladeira",3000,"Grandes conquistas","❄","Para conservar os ingredientes das próximas aventuras."],
+["Geladeira",5000,"Grandes conquistas","❄","Para conservar os ingredientes das próximas aventuras."],
 ["Fogão",1500,"Grandes conquistas","♨","Para preparar refeições dignas de um banquete."],
 ["Máquina de lavar ou lava e seca",3000,"Grandes conquistas","◉","Uma ajuda valiosa para as tarefas do novo lar."],
 ["Sofá",2500,"Grandes conquistas","⌂","Para descansar depois de longas jornadas."],
