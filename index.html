@@ -460,7 +460,7 @@ const pixText=(s,n)=>plain(s).toUpperCase().replace(/[^A-Z0-9 ]/g,"").replace(/\
 function makePix(value,txid,desc){
   const key=CONFIG.PIX_KEY.trim();
   const gui=tlv("00","br.gov.bcb.pix")+tlv("01",key)+(desc?tlv("02",desc.slice(0,Math.max(0,99-26-key.length))):"");
-  const p=tlv("00","01")+tlv("26",gui)+tlv("52","0000")+tlv("53","986")+tlv("54",value.toFixed(2))+tlv("58Skin"BR")+tlv("59",pixText(CONFIG.MERCHANT_NAME,25))+tlv("60",pixText(CONFIG.MERCHANT_CITY,15))+tlv("62",tlv("05",txid.slice(0,25)))+"6304";
+  const p=tlv("00","01")+tlv("26",gui)+tlv("52","0000")+tlv("53","986")+tlv("54",value.toFixed(2))+tlv("58","BR")+tlv("59",pixText(CONFIG.MERCHANT_NAME,25))+tlv("60",pixText(CONFIG.MERCHANT_CITY,15))+tlv("62",tlv("05",txid.slice(0,25)))+"6304";
   return p+crc16(p);
 }
 function generatePix(){
